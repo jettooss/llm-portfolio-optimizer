@@ -1,0 +1,2 @@
+step,model,train_start,train_end,test_start,test_end,score_train,mu_ann_train,sigma_q_0.9_train,risk_violation_train,realized_return_test,realized_vol_test,realized_mu_ann_test,n_assets,evaluated_portfolios_train,weights_json
+99,deepseek/deepseek-v4-pro,2024-03-27 00:00:00,2026-03-19 00:00:00,2026-03-20 00:00:00,2026-04-17 00:00:00,0.09670505649079601,0.10595705649079601,0.33316206251230546,0.0,-0.03531938734243323,0.08905988170589174,-0.4314984451867443,5,149,"{""SBER"": 0.65, ""LKOH"": 0.15, ""NVTK"": 0.12, ""MOEX"": 0.04, ""TATN"": 0.04}"

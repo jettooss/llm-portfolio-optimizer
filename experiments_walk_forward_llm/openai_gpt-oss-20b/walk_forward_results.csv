@@ -1,0 +1,2 @@
+step,model,train_start,train_end,test_start,test_end,score_train,mu_ann_train,sigma_q_0.9_train,risk_violation_train,realized_return_test,realized_vol_test,realized_mu_ann_test,n_assets,evaluated_portfolios_train,weights_json
+99,openai/gpt-oss-20b,2024-03-27 00:00:00,2026-03-19 00:00:00,2026-03-20 00:00:00,2026-04-17 00:00:00,0.05983517185300747,0.06693517185300747,0.15067894308024588,0.0,0.004337409834385797,0.042325356395397674,0.05193636461098753,3,135,"{""SBER"": 0.45, ""FXIT"": 0.3, ""FXUS"": 0.25}"

@@ -1,0 +1,23 @@
+{
+  "steps": 1,
+  "train_window": 504,
+  "test_window": 21,
+  "step": 21,
+  "cumulative_return": -0.013494948855028,
+  "annualized_return": -0.15044449295893436,
+  "annualized_volatility": 0.11537305585220131,
+  "sharpe_like": -1.303982908727505,
+  "max_drawdown": -0.03554582249516036,
+  "win_rate": 0.0,
+  "avg_n_assets": 5.0,
+  "optimizer": "llm",
+  "model": "qwen/qwen3.5-35b-a3b",
+  "initial_random_samples": 10,
+  "iterations": 50,
+  "candidates_per_iter": 3,
+  "llm_attempts_per_iteration": 1,
+  "optimizer_verbose": true,
+  "start_step": 99,
+  "max_steps": 1,
+  "model_dir": "c:\\Users\\Jet\\Desktop\\ya\\notebook_code\\experiments_walk_forward_llm\\qwen_qwen3.5-35b-a3b"
+}

@@ -1,0 +1,23 @@
+{
+  "steps": 1,
+  "train_window": 504,
+  "test_window": 21,
+  "step": 21,
+  "cumulative_return": -0.03086734593401652,
+  "annualized_return": -0.313566099179993,
+  "annualized_volatility": 0.06592493364522602,
+  "sharpe_like": -4.756411297544021,
+  "max_drawdown": -0.04056821184741799,
+  "win_rate": 0.0,
+  "avg_n_assets": 6.0,
+  "optimizer": "llm",
+  "model": "openai/gpt-oss-120b",
+  "initial_random_samples": 10,
+  "iterations": 50,
+  "candidates_per_iter": 3,
+  "llm_attempts_per_iteration": 1,
+  "optimizer_verbose": true,
+  "start_step": 99,
+  "max_steps": 1,
+  "model_dir": "c:\\Users\\Jet\\Desktop\\ya\\notebook_code\\experiments_walk_forward_llm\\openai_gpt-oss-120b"
+}

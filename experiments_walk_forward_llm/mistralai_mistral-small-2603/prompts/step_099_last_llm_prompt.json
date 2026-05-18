@@ -1,0 +1,46 @@
+# Task
+Choose 3 new long-only portfolios for walk-forward testing. Use only the training-window evidence and the scored portfolio history.
+
+# Objective
+Maximize score without breaching the risk limit.
+score = mu_ann - 20 * max(0, sigma_q_0.9 - max_sigma_ann) - 0.02 * concentration
+
+# Parameters
+- max_sigma_ann: 0.35
+- risk_metric: sigma_q_0.9
+- min_assets: 3
+- max_assets: 10
+- iteration: 49
+- concentration: sum(weight ** 2)
+
+# Candidate strategy
+- Use the best portfolios as evidence, but do not copy them exactly.
+- Make candidates meaningfully different: one return-seeking, one balanced, one more diversified/defensive.
+- Increase weights of assets that repeatedly appear in top portfolios only if risk should remain below the limit.
+- Avoid combinations similar to the worst portfolios or portfolios with risk_violation > 0.
+- Usually use 3-8 assets; avoid any single weight above 0.40 unless strongly justified by prior scores.
+- Weights must be decimal numbers and should sum exactly or very close to 1.0.
+
+# Hard output contract
+- Use only tickers from available_assets, copied exactly.
+- Return exactly 3 objects in candidates.
+- Each object must be shaped as {"weights":{"TICKER":0.1}}.
+- Return raw JSON only.
+
+# available_assets
+["SBER","SBERP","GAZP","LKOH","ROSN","NVTK","TATN","TATNP","GMKN","CHMF","NLMK","MAGN","ALRS","PLZL","PHOR","MGNT","MTSS","RTKM","SNGS","SNGSP","AFKS","MOEX","VTBR","YDEX","AFLT","FEES","IRAO","HYDR","TRNFP","BSPB","PIKK","FIVE","UPRO","CBOM","VKCO","T","OZON","POSI","RUAL","ENPG","SPBE","ASTR","FESH","NMTP","BELU","HEAD","LSRG","MSNG","TGKN","UNAC","CNTL","RNFT","FLOT","SMLT","SOFL","DELI","SBMX","SBRB","LQDT","TITR","EQMX","AKMB","SBCB","SBGB","FXUS","FXCN","FXIT","FXMM","SBHI","TBRU","TMOS","TECH","SU26238RMFS4","SU26243RMFS4","SU26244RMFS2","SU26233RMFS5","SU26234RMFS3","USD000UTSTOM","EUR_RUB__TOM","CHFRUB_TOM","JPYRUB_TOM"]
+
+# current_best
+{"score":0.124068,"mu_ann":0.127468,"sigma_q_0.9":0.294105,"risk_violation":0.0,"concentration":0.17,"weights":{"SBER":0.25,"MOEX":0.2,"PLZL":0.15,"AFLT":0.15,"PHOR":0.1,"IRAO":0.1,"USD000UTSTOM":0.05}}
+
+# assets_seen_in_best
+[{"asset":"MOEX","count":10,"avg_weight":0.1927},{"asset":"PLZL","count":10,"avg_weight":0.1338},{"asset":"SBER","count":10,"avg_weight":0.2397},{"asset":"AFLT","count":8,"avg_weight":0.121},{"asset":"USD000UTSTOM","count":8,"avg_weight":0.1147},{"asset":"IRAO","count":7,"avg_weight":0.0982},{"asset":"PHOR","count":6,"avg_weight":0.1029},{"asset":"VTBR","count":6,"avg_weight":0.1713},{"asset":"CBOM","count":2,"avg_weight":0.0598}]
+
+# top_best_portfolios
+[{"score":0.124068,"mu_ann":0.127468,"sigma_q_0.9":0.294105,"risk_violation":0.0,"concentration":0.17,"weights":{"SBER":0.25,"MOEX":0.2,"PLZL":0.15,"AFLT":0.15,"PHOR":0.1,"IRAO":0.1,"USD000UTSTOM":0.05}},{"score":0.110414,"mu_ann":0.113646,"sigma_q_0.9":0.266463,"risk_violation":0.0,"concentration":0.1616,"weights":{"SBER":0.22,"MOEX":0.2,"PLZL":0.15,"AFLT":0.13,"USD000UTSTOM":0.15,"PHOR":0.08,"IRAO":0.07}},{"score":0.109584,"mu_ann":0.11262,"sigma_q_0.9":0.253997,"risk_violation":0.0,"concentration":0.1518,"weights":{"SBER":0.2,"MOEX":0.18,"PLZL":0.15,"PHOR":0.12,"IRAO":0.1,"AFLT":0.1,"USD000UTSTOM":0.15}},{"score":0.102704,"mu_ann":0.106904,"sigma_q_0.9":0.269196,"risk_violation":0.0,"concentration":0.21,"weights":{"SBER":0.25,"MOEX":0.25,"AFLT":0.15,"PLZL":0.15,"USD000UTSTOM":0.2}},{"score":0.099102,"mu_ann":0.101938,"sigma_q_0.9":0.31119,"risk_violation":0.0,"concentration":0.1418,"weights":{"SBER":0.2,"MOEX":0.18,"PLZL":0.15,"VTBR":0.12,"AFLT":0.1,"PHOR":0.1,"CBOM":0.1,"USD000UTSTOM":0.05}},{"score":0.097613,"mu_ann":0.101913,"sigma_q_0.9":0.315391,"risk_violation":0.0,"concentration":0.215,"weights":{"SBER":0.3,"MOEX":0.2,"VTBR":0.2,"IRAO":0.15,"PLZL":0.15}},{"score":0.096592,"mu_ann":0.100692,"sigma_q_0.9":0.316023,"risk_violation":0.0,"concentration":0.205,"weights":{"SBER":0.3,"VTBR":0.25,"MOEX":0.15,"PLZL":0.1,"IRAO":0.1,"PHOR":0.1}},{"score":0.090555,"mu_ann":0.093004,"sigma_q_0.9":0.272016,"risk_violation":0.0,"concentration":0.122453,"weights":{"SBER":0.14705882352941177,"MOEX":0.14705882352941177,"PLZL":0.11764705882352941,"PHOR":0.11764705882352941,"IRAO":0.11764705882352941,"AFLT":0.11764705882352941,"VTBR":0.09803921568627451,"USD000UTSTOM":0.11764705882352941,"CBOM":0.0196078431372549}},{"score":0.090499,"mu_ann":0.093935,"sigma_q_0.9":0.307181,"risk_violation":0.0,"concentration":0.1718,"weights":{"SBER":0.25,"MOEX":0.2,"PLZL":0.12,"VTBR":0.18,"AFLT":0.1,"IRAO":0.05,"USD000UTSTOM":0.1}},{"score":0.090236,"mu_ann":0.094108,"sigma_q_0.9":0.317656,"risk_violation":0.0,"concentration":0.1936,"weights":{"SBER":0.2800000000000001,"MOEX":0.22000000000000003,"VTBR":0.18000000000000002,"AFLT":0.12000000000000001,"PLZL":0.10000000000000002,"USD000UTSTOM":0.10000000000000002}}]
+
+# worst_portfolios_to_avoid
+[{"score":-1.415753,"sigma_q_0.9":0.407065,"risk_violation":0.057065,"weights":{"SNGSP":0.3488709511762696,"RUAL":0.02033574317180247,"EUR_RUB__TOM":0.11281039281293388,"MAGN":0.03564777899940423,"UNAC":0.4823351338395898}},{"score":-1.024633,"sigma_q_0.9":0.401702,"risk_violation":0.051702,"weights":{"LSRG":0.051134368657142375,"TATN":0.40316436718596943,"HEAD":0.03398063364848378,"CBOM":0.09623320796696241,"MAGN":0.09329543020858978,"NVTK":0.3221919923328522}},{"score":-0.308157,"sigma_q_0.9":0.367019,"risk_violation":0.017019,"weights":{"SBER":0.3,"GAZP":0.2,"MOEX":0.3,"AFLT":0.1,"VTBR":0.1}},{"score":-0.28096,"sigma_q_0.9":0.361935,"risk_violation":0.011935,"weights":{"SBER":0.25,"LKOH":0.2,"GMKN":0.2,"NLMK":0.15,"MTSS":0.1,"AFKS":0.1}},{"score":-0.276248,"sigma_q_0.9":0.357564,"risk_violation":0.007564,"weights":{"CHMF":0.2,"NLMK":0.15,"ALRS":0.15,"PLZL":0.15,"PHOR":0.15,"MAGN":0.2}}]
+
+# Output JSON only
+{"candidates":[{"weights":{"SBER":0.30,"GAZP":0.25,"LKOH":0.20,"MOEX":0.25}}]}

@@ -1,0 +1,2 @@
+step,model,train_start,train_end,test_start,test_end,score_train,mu_ann_train,sigma_q_0.9_train,risk_violation_train,realized_return_test,realized_vol_test,realized_mu_ann_test,n_assets,evaluated_portfolios_train,weights_json
+99,google/gemini-3.1-pro-preview,2024-03-27 00:00:00,2026-03-19 00:00:00,2026-03-20 00:00:00,2026-04-17 00:00:00,0.25546654188334256,0.26049454188334253,0.1847818879170171,0.0,0.004690448158834126,0.12029872957815853,0.056153787400952046,5,143,"{""PLZL"": 0.39, ""LQDT"": 0.2, ""AKMB"": 0.18, ""SBER"": 0.13, ""TBRU"": 0.1}"

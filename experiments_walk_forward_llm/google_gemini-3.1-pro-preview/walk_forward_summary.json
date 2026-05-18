@@ -1,0 +1,23 @@
+{
+  "steps": 1,
+  "train_window": 504,
+  "test_window": 21,
+  "step": 21,
+  "cumulative_return": 0.004690448158834126,
+  "annualized_return": 0.05776034144267905,
+  "annualized_volatility": 0.12029872957815853,
+  "sharpe_like": 0.48014090959416117,
+  "max_drawdown": -0.03194932798883632,
+  "win_rate": 1.0,
+  "avg_n_assets": 5.0,
+  "optimizer": "llm",
+  "model": "google/gemini-3.1-pro-preview",
+  "initial_random_samples": 10,
+  "iterations": 50,
+  "candidates_per_iter": 3,
+  "llm_attempts_per_iteration": 1,
+  "optimizer_verbose": true,
+  "start_step": 99,
+  "max_steps": 1,
+  "model_dir": "c:\\Users\\Jet\\Desktop\\ya\\notebook_code\\experiments_walk_forward_llm\\google_gemini-3.1-pro-preview"
+}
