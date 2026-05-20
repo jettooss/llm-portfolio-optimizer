@@ -176,61 +176,35 @@ asset_consensus_summary.png
 
 ### Кривая капитала по моделям
 
-![Кривая капитала](../experiments_walk_forward_llm/compare_equity_curve.png)
+![Кривая капитала](experiments_walk_forward_llm/compare_equity_curve.png)
 
 ### Просадка по моделям
 
-![Просадка](../experiments_walk_forward_llm/compare_drawdown.png)
+![Просадка](experiments_walk_forward_llm/compare_drawdown.png)
 
 ### Доходность на test-окне
 
-![Test return](../experiments_walk_forward_llm/compare_test_return.png)
+![Test return](experiments_walk_forward_llm/compare_test_return.png)
 
 ### Лучший train score по эпохам
 
-![Best train score](../experiments_walk_forward_llm/compare_best_train_score_by_epoch.png)
+![Best train score](experiments_walk_forward_llm/compare_best_train_score_by_epoch.png)
 
 ### Средний train score по эпохам
 
-![Mean train score](../experiments_walk_forward_llm/compare_mean_train_score_by_epoch.png)
+![Mean train score](experiments_walk_forward_llm/compare_mean_train_score_by_epoch.png)
 
 ### Частота выбора активов
 
-![Частота выбора активов](../experiments_walk_forward_llm/compare_asset_frequency.png)
+![Частота выбора активов]( experiments_walk_forward_llm/compare_asset_frequency.png)
 
 ### Финальные веса активов по моделям
 
-![Финальные веса](../experiments_walk_forward_llm/model_final_asset_weights.png)
+![Финальные веса](experiments_walk_forward_llm/model_final_asset_weights.png)
 
 ### Консенсус активов между моделями
 
-![Консенсус активов](../experiments_walk_forward_llm/asset_consensus_summary.png)
-
-## Как восстановить результаты в ноутбуке
-
-Если kernel перезапущен и переменные потерялись, их можно восстановить из CSV:
-
-```python
-walk_forward_results_all = pd.read_csv(WF_OUT_DIR / "all_models_walk_forward_results.csv")
-walk_forward_equity_curve_all = pd.read_csv(WF_OUT_DIR / "all_models_walk_forward_equity_curve.csv")
-walk_forward_summary_all = pd.read_csv(WF_OUT_DIR / "all_models_walk_forward_summary.csv")
-walk_forward_epoch_scores_all = pd.read_csv(WF_OUT_DIR / "all_models_walk_forward_epoch_scores.csv")
-```
-
-Частоту выбранных активов можно открыть так:
-
-```python
-asset_frequency = pd.read_csv(WF_OUT_DIR / "compare_asset_frequency.csv")
-display(asset_frequency.sort_values(["model", "selected_count"], ascending=[True, False]))
-```
-
-А сохраненную картинку:
-
-```python
-from IPython.display import Image, display
-
-display(Image(filename=str(WF_OUT_DIR / "compare_asset_frequency.png")))
-```
+![Консенсус активов](experiments_walk_forward_llm/asset_consensus_summary.png)
 
 ## Важное замечание
 
